@@ -1,0 +1,264 @@
+@font-face {
+    font-family: american-typewriter;
+    src: url(../fonts/american-typewriter.ttf);
+}
+/*
+html, body{
+  height: 100%;
+  overflow: hidden;
+}
+*/
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+  background-color: #052b3e;
+  font-family: american-typewriter;
+  font-size: 18px;
+}
+
+/*loader classes*/
+.loader{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #81eddd;
+  font-size: 3em;
+  text-align: center;
+  z-index: 1;
+  background-color: #052b3e;
+}
+
+.loader .elipse{
+  width: 28%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 50%;
+  border-width: 3px;
+  border-style: dashed;
+  border-color: #81eddd;
+}
+.loader .elipse:before{
+  content: "";
+	display: block;
+  padding-top: 100%;
+}
+
+.loader .elipse:after{
+  content: "PlaneIT";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(-60%);
+  font-size: 2.3em;
+}
+
+.loader .roket{
+  width: 28%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.loader .roket:before{
+  content: "";
+	display: block;
+  padding-top: 100%;
+  background-image: url("../images/raketochka.png");
+  background-repeat: no-repeat;
+  background-size: 29%;
+  -webkit-animation:spin 10s linear infinite;
+  -moz-animation:spin 10s linear infinite;
+  animation:spin 10s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+img.earth{
+  position: absolute;
+  width: 25%;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+/*end loader classes*/
+header img{padding-left: 10px;}
+header{
+  background-color: #2DBAA4;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #063444;
+  padding-left: 20px;
+  font-size: 1.2em;
+}
+
+.signin{
+  background-color: #EEE;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 100px;
+  color: #6897AC;
+}
+
+.signin h2{color: #193E4E;}
+.signin img{width:90px; cursor: pointer;}
+.signin .row{
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.signin .fb:before, .signin .vk:before,
+.signin .gh:before, .signin .gp:before{
+  cursor: pointer;
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-size: 100%;
+  top: 20px;
+  left: 34px;
+}
+
+.signin .fb:before{ background-image: url("https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-512.png"); }
+.signin .gp:before{ background-image: url("http://icons.iconarchive.com/icons/marcus-roberto/google-play/256/Google-plus-icon.png"); }
+.signin .vk:before{ background-image: url("http://icons.iconarchive.com/icons/limav/flat-gradient-social/256/Vk-icon.png"); }
+.signin .gh:before{
+  background-image: url("https://d0.awsstatic.com/whiteboard-graphics/aws/icons/GitHub-Mark-64px.png");
+  background-color: white;
+  border-radius: 40px;
+}
+
+
+.content{
+  padding: 20px;
+}
+
+#calendar{
+  background-color: #eee;
+}
+
+#events{border: 3px dashed #eee;}
+#events .groupe:first-child{ border-top: 0; }
+#events .groupe{
+  margin: 10px;
+  border-top: 1px solid lightgray;
+}
+
+.event{
+  font-family: Calibri;
+  background-color: #eee;
+  margin: 5px;
+  border-radius: 3px;
+}
+
+.event .action{
+  color: #2DBAA4;
+  font-size: 14px;
+  padding: 10px;
+  padding-left: 30px;
+  border-top: 1px solid lightgray;
+  cursor: pointer;
+}
+
+.event .date{
+  color: #2DBAA4;
+  font-size: 20px;
+  text-align: left;
+}
+
+.event .date, .event .time{
+  width: 50%;
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+.event .time{text-align: right;font-size: 12px;}
+.event .event-description{
+  padding: 0px 20px;
+  padding-bottom: 10px;
+  font-size: 14px;
+}
+
+.content > .row > div{
+  margin-top: 10px;
+}
+
+/*calendar*/
+.bootstrap-datetimepicker-widget table thead tr:first-child th{
+  background-color: #2DBAA4;
+  border-radius: 0;
+  height: 50px;
+}
+
+.bootstrap-datetimepicker-widget table thead tr:first-child th:hover{
+  background-color: #2DBAA4;
+}
+
+.bootstrap-datetimepicker-widget table thead tr:first-child{
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+}
+
+.dow{padding-top: 30px!important;}
+td.day{height: 70px!important;}
+
+.bootstrap-datetimepicker-widget table td.active{position: relative;}
+.bootstrap-datetimepicker-widget table td.active:hover,
+.bootstrap-datetimepicker-widget table td.active{
+  background-color: transparent;
+  color: #9D2626;
+}
+.bootstrap-datetimepicker-widget table td.day.old,
+.bootstrap-datetimepicker-widget table td.day.new{
+  color: gray;
+}
+
+.bootstrap-datetimepicker-widget table td.day{
+  color: #9D2626;
+}
+
+.bootstrap-datetimepicker-widget table td.active:after{
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-color: #2DBAA4;
+  opacity: .2;
+  border-radius: 70px;
+  top:50%;
+  left: 50%;
+  transform:  translateX(-50%) translateY(-50%);
+}
+
+th.prev, th.next{
+  color: rgb(17, 88, 95);
+}
+
+.head{
+  text-align: center;
+  font-size: 1.6em;
+}
+
+.month, .year, .decade, .datepicker-decades spanla{
+  width: 30%!important;
+  color: #9D2626;
+  background-color: transparent!important;
+}
+
+.month.active, .year.active, .datepicker-decades span.active{
+  background-color: #2DBAA4!important;
+}
