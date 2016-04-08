@@ -9,9 +9,10 @@ angular.module('myAppApp').factory('VKService',
           VK.Auth.login(this.LogInCallback);
         },
         LogInCallback: function(response){
-          if( !response.session ) return;
-          $cookies.put('user', response.session.user);
-          $location.path('/');
+          if( response.session ) {
+            $cookies.put('user', response.session.user);
+            document.location = '/#/';
+          }
         }
       }
   }]);
