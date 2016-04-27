@@ -301,3 +301,27 @@ left-menu .top{
 left-menu .name{
   font-size: 20px;
 }
+
+ul{
+  list-style: none;
+}
+
+left-menu ul{
+  border-top: 2px solid rgb(45, 186, 164);
+  padding: 20px 40px;
+  margin: 0px 30px;
+  padding: 20px 0px;
+}
+
+left-menu ul a{
+  text-decoration: none;
+  color: black;
+}
+
+left-menu ul:first-child{
+  border: none;
+}
+
+left-menu ul i{
+  margin-right: 20px;
+}
