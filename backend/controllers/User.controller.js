@@ -5,10 +5,16 @@ exports.login = function(req, res) {
   switch (req.body.id_type) {
     case 'vk':
         Models.User.findOne({ vkid: req.body.id_value }).then((user) => {
-            console.log(user);
+            if(user){
+                res.send(200, { type: true, data: user.id });
+                return;
+            }else{
+                Models.User.create({ vkid: req.body.id_value }).then((user) => {
+                   res.send(200, { type: true, data: user.id });
+                });
+            }
         })
     break;
-
   }
 
 }

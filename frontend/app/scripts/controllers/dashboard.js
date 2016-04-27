@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('myAppApp')
-  .controller('DashboardCtrl', ['$cookies', '$location', function($cookies, $location){
-      if( !$cookies.get('user') ) {
+  .controller('DashboardCtrl', ['$cookies', '$location', '$scope', '$rootScope', function($cookies, $location, $scope, $rootScope){
+      if( !$rootScope.uid ) {
           $location.path('/signin');
       }
 

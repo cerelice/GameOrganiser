@@ -2,9 +2,9 @@
 
 angular.module('myAppApp')
   .controller('SigninCtrl',
-    ['VKService', '$cookies', '$location',
-     function(VKService, $cookies, $location){
-       if( $cookies.get('user') ) {
+    ['VKService', '$cookies', '$location', '$rootScope',
+     function(VKService, $cookies, $location, $rootScope){
+       if( $rootScope.uid ) {
           $location.path('/');
        }
 

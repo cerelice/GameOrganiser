@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('myAppApp').factory('VKService',
-  ['$cookies', '$location', 'APIService', function($cookies, $location, APIService) {
+  ['$cookies', '$location', 'APIService', '$rootScope', function($cookies, $location, APIService, $rootScope) {
       VK.init({ apiId: 5360849 });
 
       return {
@@ -10,11 +10,21 @@ angular.module('myAppApp').factory('VKService',
         },
         LogInCallback: function(response){
           if( response.session ) {
-            $cookies.put('user', response.session.user);
+            $rootScope.firstName = response.session.user.first_name;
+            $rootScope.lastName = response.session.user.last_name;
+
             APIService.login('vk', response.session.user.id).then(function(resp){
-              console.log(resp);
+              $rootScope.uid = resp.data.data;
+              document.location = '/#/';
+
             });
-            document.location = '/#/';
+
+            VK.Api.call('users.get', {uids: response.session.user.id, fields: "photo_200_orig"}, function(r) {
+              if(r.response) {
+                $rootScope.uphoto = r.response[0].photo_200_orig;
+              }
+            });
+
           }
         }
       }
