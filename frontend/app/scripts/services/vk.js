@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('myAppApp').factory('VKService',
-  ['$cookies', '$location', function($cookies, $location) {
+  ['$cookies', '$location', 'APIService', function($cookies, $location, APIService) {
       VK.init({ apiId: 5360849 });
 
       return {
@@ -11,6 +11,9 @@ angular.module('myAppApp').factory('VKService',
         LogInCallback: function(response){
           if( response.session ) {
             $cookies.put('user', response.session.user);
+            APIService.login('vk', response.session.user.id).then(function(resp){
+              console.log(resp);
+            });
             document.location = '/#/';
           }
         }
