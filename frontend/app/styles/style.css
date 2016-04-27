@@ -128,8 +128,9 @@ header{
   width: 50px;
   height: 50px;
   background-size: 100%;
-  top: 20px;
-  left: 34px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .signin .fb:before{ background-image: url("https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-512.png"); }
