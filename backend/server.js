@@ -10,6 +10,9 @@ server
   .use( restify.bodyParser() );
 
 server.post('/login', Controllers.User.login);
+//events routes
+server.get('/events/:id', Controllers.Event.GetEvents);
+
 
 server.listen('3009', (err) => {
   if (err) console.error(err);
