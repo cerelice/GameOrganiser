@@ -2,7 +2,7 @@
 
 angular.module('myAppApp').factory('APIService',
   ['$cookies', '$location', '$http', function($cookies, $location, $http) {
-      var api_url = "http://0.0.0.0:3009";
+      var api_url = "http://0.0.0.0:9999";
 
       return {
         login: function(type, id){
