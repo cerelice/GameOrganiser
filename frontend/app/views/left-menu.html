@@ -1,4 +1,7 @@
 <div class="left-menu">
+  <div class="close text-right">
+    <i class="fa fa-angle-double-left" aria-hidden="true" ng-click="close()"></i>
+  </div>
   <div class="top">
     <div class="ava">
       <img src="{{ $root.uphoto }}">
@@ -7,8 +10,8 @@
   </div>
   <div class="menu">
     <ul>
-      <li><i class="fa fa-calendar-o" aria-hidden="true"></i>Calendar</li>
-      <li><i class="fa fa-list" aria-hidden="true"></i>To do list</li>
+      <li><a href="/#/"><i class="fa fa-calendar-o" aria-hidden="true"></i>Calendar</a></li>
+      <li><a href="/#/todolist"><i class="fa fa-list" aria-hidden="true"></i>To do board</a></li>
       <li><i class="fa fa-pencil" aria-hidden="true"></i>Notes</li>
     </ul>
     <ul>

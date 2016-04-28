@@ -11,4 +11,8 @@ angular.module('myAppApp')
           format: "MM/dd/YYYY"
       });
 
+      $scope.openMenu = function(){
+        $scope.$emit('openLeftMenu');
+      }
+
   }]);

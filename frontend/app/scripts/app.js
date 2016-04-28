@@ -12,6 +12,11 @@ angular.module('myAppApp', ['ngCookies', 'ngRoute']).config(function($routeProvi
             controller: 'SigninCtrl',
             controllerAs: 'signin'
         })
+        .when('/todolist', {
+            templateUrl: 'views/todolist.html',
+            controller: 'ToDoList',
+            controllerAs: 'todolist'
+        })
         .otherwise({redirectTo: '/'});
   });
 

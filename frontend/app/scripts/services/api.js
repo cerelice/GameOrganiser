@@ -16,5 +16,18 @@ angular.module('myAppApp').factory('APIService',
             });
         },
 
+        getEvents: function(uid){
+          return $http({
+            method: 'GET',
+            url: api_url + "/events/" + uid
+          });
+        },
+
+        deleteEvent: function(eid){
+          return $http({
+            method: 'DELETE',
+            url: api_url + '/devent/' + eid
+          });
+        }
       }
   }]);
