@@ -38,7 +38,7 @@ angular.module('myAppApp')
       }
 
       function Update(){
-        APIService.getEvents($rootScope.uid).then((resp) => {
+        APIService.getEvents($rootScope.uid).then(function(resp){
           var resp = resp.data;
 
           if(!resp.type) return;

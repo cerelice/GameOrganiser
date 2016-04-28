@@ -17,13 +17,13 @@ angular.module('myAppApp')
        }
 
        $scope.Skip = function(id){
-         APIService.deleteEvent(id).then((resp) => {
+         APIService.deleteEvent(id).then(function(resp){
             Update();
          });
        }
 
        var Update = function(){
-         APIService.getEvents($rootScope.uid).then((resp) => {
+         APIService.getEvents($rootScope.uid).then(function(resp){
            var resp = resp.data;
 
            if(!resp.type) return;
