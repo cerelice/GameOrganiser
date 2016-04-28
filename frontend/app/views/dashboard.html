@@ -14,30 +14,28 @@
   <div class="row">
     <div class="col-sm-8 col-xs-12">
       <div id="calendar"></div>
-      <div class="add-event"><i class="fa fa-plus" aria-hidden="true"></i></div>
+      <div class="add-event" ng-click="openPopup()"><i class="fa fa-plus" aria-hidden="true"></i></div>
     </div>
     <div class="col-sm-4 col-xs-12">
       <div id="events">
         <div class="groupe">
-          <div class="event">
-            <div class="date">7 March</div><div class="time">12:30</div>
-            <div class="event-description">Meeting with Aragorn</div>
-            <div class="action">Skip</div>
-          </div>
-          <div class="event">
-            <div class="date">7 March</div><div class="time">12:30</div>
-            <div class="event-description">Meeting with Aragorn</div>
-            <div class="action">Skip</div>
-          </div>
-        </div>
-        <div class="groupe">
-          <div class="event">
-            <div class="date">7 March</div><div class="time">12:30</div>
-            <div class="event-description">Meeting with Aragorn</div>
-            <div class="action">Skip</div>
+          <div class="event" ng-repeat="event_item in eventsShow">
+            <div class="date">{{ event_item.date.getDate() }} {{ monthNames[event_item.date.getMonth()] }}</div>
+            <div class="time">{{ event_item.date.getHours() }}:{{ event_item.date.getMinutes() }}</div>
+            <div class="event-description">{{ event_item.description }}</div>
+            <div class="action" ng-click="Skip(event_item.id)">Skip</div>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="popup-wraper" style="display:none">
+  <div class="popup">
+    <h1 class="text-center">Add new event</h1>
+    <textarea placeholder="Description" ng-model="description"></textarea>
+    <input type="button" ng-click="AddEvent()" value="Add">
+    <div class="popup-close" ng-click="closePopup()"><i class="fa fa-times" aria-hidden="true"></i></div>
   </div>
 </div>

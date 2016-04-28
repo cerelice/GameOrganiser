@@ -16,3 +16,8 @@ exports.DeleteEvent = function(req, res){
         res.send(200);
     });
 }
+
+exports.AddEvent = function(req, res){
+  Models.Event.create(req.body);
+  res.send(201);
+}

@@ -28,6 +28,19 @@ angular.module('myAppApp').factory('APIService',
             method: 'DELETE',
             url: api_url + '/devent/' + eid
           });
+        },
+
+        createEvent: function(desk, dat, uid){
+          return $http({
+            method: 'POST',
+            url: api_url + '/event',
+            data: {
+              description: desk,
+              date: dat,
+              userId: uid
+            }
+          });
         }
+
       }
   }]);
